@@ -1,39 +1,132 @@
-const DATA=[
-["ا","Alif",["Istifal","Infitah","Ismat"],"Alif has no fixed Sifah of its own; heaviness or lightness follows the preceding letter."],
-["ب","Baa",["Jahr","Shiddah","Istifal","Infitah","Idhlaq","Qalqalah"],"Qalqalah applies when the letter is Saakin."],
-["ت","Taa",["Hams","Shiddah","Istifal","Infitah","Ismat"],""],["ث","Thaa",["Hams","Rakhawah","Istifal","Infitah","Ismat"],""],
-["ج","Jeem",["Jahr","Shiddah","Istifal","Infitah","Ismat","Qalqalah"],"Qalqalah applies when the letter is Saakin."],["ح","Haa",["Hams","Rakhawah","Istifal","Infitah","Ismat"],""],
-["خ","Khaa",["Hams","Rakhawah","Isti'la","Infitah","Ismat"],""],["د","Daal",["Jahr","Shiddah","Istifal","Infitah","Ismat","Qalqalah"],"Qalqalah applies when the letter is Saakin."],
-["ذ","Dhaal",["Jahr","Rakhawah","Istifal","Infitah","Ismat"],""],["ر","Raa",["Jahr","Tawassut","Istifal","Infitah","Idhlaq","Inhiraf","Takrir"],"Avoid excessive rolling."],
-["ز","Zaay",["Jahr","Rakhawah","Istifal","Infitah","Ismat","Safir"],""],["س","Seen",["Hams","Rakhawah","Istifal","Infitah","Ismat","Safir"],""],
-["ش","Sheen",["Hams","Rakhawah","Istifal","Infitah","Ismat","Tafash-shi"],""],["ص","Saad",["Hams","Rakhawah","Isti'la","Itbaq","Ismat","Safir"],""],
-["ض","Daad",["Jahr","Rakhawah","Isti'la","Itbaq","Ismat","Istitalah"],""],["ط","Taa",["Jahr","Shiddah","Isti'la","Itbaq","Ismat","Qalqalah"],"Qalqalah applies when the letter is Saakin."],
-["ظ","Dhaa",["Jahr","Rakhawah","Isti'la","Itbaq","Ismat"],""],["ع","Ayn",["Jahr","Tawassut","Istifal","Infitah","Ismat"],""],
-["غ","Ghayn",["Jahr","Rakhawah","Isti'la","Infitah","Ismat"],""],["ف","Faa",["Hams","Rakhawah","Istifal","Infitah","Idhlaq"],""],
-["ق","Qaaf",["Jahr","Shiddah","Isti'la","Infitah","Ismat","Qalqalah"],"Qalqalah applies when the letter is Saakin."],["ك","Kaaf",["Hams","Shiddah","Istifal","Infitah","Ismat"],""],
-["ل","Laam",["Jahr","Tawassut","Istifal","Infitah","Idhlaq","Inhiraf"],""],["م","Meem",["Jahr","Tawassut","Istifal","Infitah","Idhlaq"],""],
-["ن","Noon",["Jahr","Tawassut","Istifal","Infitah","Idhlaq","Ghunnah"],"Ghunnah is inherent in Meem and Noon."],["ه","Haa",["Hams","Rakhawah","Istifal","Infitah","Ismat"],""],
-["و","Waaw",["Jahr","Rakhawah","Istifal","Infitah","Ismat"],"Waaw can have Leen when Saakin and preceded by Fathah."],["ي","Yaa",["Jahr","Rakhawah","Istifal","Infitah","Ismat"],"Yaa can have Leen when Saakin and preceded by Fathah."]
+const letters = [
+  ["ا", "Alif", "Jahr, Istifal, Infitah, Ismat"],
+  ["ب", "Ba", "Jahr, Shiddah, Istifal, Infitah, Idhlaq, Qalqalah"],
+  ["ت", "Ta", "Hams, Shiddah, Istifal, Infitah, Ismat"],
+  ["ث", "Tha", "Hams, Rakhawah, Istifal, Infitah, Ismat"],
+  ["ج", "Jeem", "Jahr, Shiddah, Istifal, Infitah, Ismat, Qalqalah"],
+  ["ح", "Ha", "Hams, Rakhawah, Istifal, Infitah, Ismat"],
+  ["خ", "Kha", "Hams, Rakhawah, Isti'la, Infitah, Ismat"],
+  ["د", "Dal", "Jahr, Shiddah, Istifal, Infitah, Ismat, Qalqalah"],
+  ["ذ", "Dhal", "Jahr, Rakhawah, Istifal, Infitah, Ismat"],
+  ["ر", "Ra", "Jahr, Tawassut, Istifal, Infitah, Idhlaq, Inhiraf, Takrir"],
+  ["ز", "Zay", "Jahr, Rakhawah, Istifal, Infitah, Ismat, Safir"],
+  ["س", "Seen", "Hams, Rakhawah, Istifal, Infitah, Ismat, Safir"],
+  ["ش", "Sheen", "Hams, Rakhawah, Istifal, Infitah, Ismat, Tafash-shi"],
+  ["ص", "Sad", "Hams, Rakhawah, Isti'la, Itbaq, Ismat, Safir"],
+  ["ض", "Dad", "Jahr, Rakhawah, Isti'la, Itbaq, Ismat, Istitalah"],
+  ["ط", "Ta", "Jahr, Shiddah, Isti'la, Itbaq, Ismat, Qalqalah"],
+  ["ظ", "Dha", "Jahr, Rakhawah, Isti'la, Itbaq, Ismat"],
+  ["ع", "Ayn", "Jahr, Tawassut, Istifal, Infitah, Ismat"],
+  ["غ", "Ghayn", "Jahr, Rakhawah, Isti'la, Infitah, Ismat"],
+  ["ف", "Fa", "Hams, Rakhawah, Istifal, Infitah, Idhlaq"],
+  ["ق", "Qaf", "Jahr, Shiddah, Isti'la, Infitah, Ismat, Qalqalah"],
+  ["ك", "Kaf", "Hams, Shiddah, Istifal, Infitah, Ismat"],
+  ["ل", "Lam", "Jahr, Tawassut, Istifal, Infitah, Idhlaq, Inhiraf"],
+  ["م", "Meem", "Jahr, Tawassut, Istifal, Infitah, Idhlaq"],
+  ["ن", "Noon", "Jahr, Tawassut, Istifal, Infitah, Idhlaq, Ghunnah"],
+  ["ه", "Ha", "Hams, Rakhawah, Istifal, Infitah, Ismat"],
+  ["و", "Waw", "Jahr, Rakhawah, Istifal, Infitah, Ismat, Leen"],
+  ["ي", "Ya", "Jahr, Rakhawah, Istifal, Infitah, Ismat, Leen"]
 ];
-const Q=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,0,3,6,9,12,15,18,21,24,26,27,8];
-let S={mode:"home",li:0,qi:0,ok:0,no:0,stars:+localStorage.getItem("stars")||0,sound:true,mem:[],flip:[],matches:0};
-let deferred=null,app=document.getElementById("app");
-function save(){localStorage.setItem("stars",S.stars)}
-function say(t,lang="en-US"){if(!S.sound||!speechSynthesis)return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=lang;u.rate=.78;speechSynthesis.speak(u)}
-function hear(i){say(DATA[i][0],"ar-SA");setTimeout(()=>say(DATA[i][1]),650)}
-function home(){S.mode="home";let d=DATA[new Date().getDate()%28];app.innerHTML=`<section class="page"><div class="hero"><div>☁️ ✨ ☁️</div><h1>Arabic Kids</h1><p class="sub">Learn Arabic letters through play!</p></div><div class="card stats"><div class="stat"><b>${S.stars}</b><small>⭐ Stars</small></div><div class="stat"><b>28</b><small>🔤 Letters</small></div><div class="stat"><b>40</b><small>🎯 Questions</small></div></div><div class="menu"><button class="big purple" id="learn">📚 Learn Mode</button><button class="big pink" id="quiz">🎯 Quiz Mode</button><button class="big green" id="memory">🧠 Memory Game</button><button class="big orange" id="taj">📖 Tajweed Corner</button><button class="big navy install" id="install">📲 Install Arabic Kids</button></div><div class="card"><b>🌞 Daily Arabic</b><p>Today's letter: <strong>${d[0]} — ${d[1]}</strong></p><button class="listen" id="daily">🔊 Listen</button></div></section>`;learn.onclick=()=>learnMode(0);quiz.onclick=quizStart;memory.onclick=memory;taj.onclick=tajweed;daily.onclick=()=>hear(new Date().getDate()%28);if(deferred)install.classList.add("show");}
-function learnMode(i){S.mode="learn";S.li=i;let d=DATA[i];app.innerHTML=`<section class="page"><button class="back" data-home>← Home</button><div class="card letter"><div class="tiny">LETTER ${i+1} OF 28</div><div class="arabic large">${d[0]}</div><div class="name">${d[1]}</div><button class="listen" id="hear">🔊 Listen</button></div><div class="card"><h2>✨ Tajweed Qualities</h2><div class="tags">${d[2].map(x=>`<span class="tag">${x}</span>`).join("")}</div><p class="tiny">${d[3]||"Recorded Sifaat for this letter."}</p></div><div class="nav"><button id="prev">← Previous</button><button id="next">Next →</button></div><button class="big pink" id="try" style="width:100%;margin-top:12px">🎯 Try the Quiz</button></section>`;hear.onclick=()=>hear(i);prev.onclick=()=>learnMode((i+27)%28);next.onclick=()=>learnMode((i+1)%28);try.onclick=quizStart;bindHome()}
-function quizStart(){S.mode="quiz";S.qi=0;S.ok=0;S.no=0;S.order=Q.slice().sort(()=>Math.random()-.5);quiz()}
-function quiz(){if(S.qi>=S.order.length)return result();let t=S.order[S.qi],ds=[(t+1)%28,(t+3)%28,(t+7)%28].sort(()=>Math.random()-.5),opts=[t,...ds].sort(()=>Math.random()-.5);app.innerHTML=`<section class="page"><button class="back" data-home>← Home</button><div class="card"><div style="display:flex;justify-content:space-between;font-weight:900"><span>🎯 Quiz</span><span>${S.qi+1}/40</span></div><div class="progress"><i style="width:${S.qi/40*100}%"></i></div><div class="question">Which letter is <b>${DATA[t][1]}</b>?</div><button class="listen" id="hearq">🔊 Hear the letter</button><div class="choices">${opts.map(o=>`<button class="choice" data-o="${o}">${DATA[o][0]}</button>`).join("")}</div><div id="fb" class="feedback"></div></div><div class="card"><b>✨ Tajweed:</b> ${DATA[t][2].join(" • ")}</div></section>`;document.querySelectorAll(".choice").forEach(b=>b.onclick=()=>answer(+b.dataset.o,t,b));hearq.onclick=()=>hear(t);bindHome()}
-function answer(a,t,b){document.querySelectorAll(".choice").forEach(x=>x.disabled=true);if(a===t){S.ok++;S.stars++;b.classList.add("correct");fb.innerHTML="🌟 Very good!";say("Very good!");}else{S.no++;b.classList.add("wrong");fb.innerHTML="🌸 Try one more time!";say("Try one more time!")}save();setTimeout(()=>{S.qi++;quiz()},850)}
-function result(){let p=Math.round(S.ok/40*100);app.innerHTML=`<section class="page"><div class="card result"><div>⭐⭐⭐⭐⭐</div><h1>Great Work!</h1><div class="score">${p}%</div><p>${p>=90?"Amazing work! 🏆":p>=70?"Great job! 🌟":"Keep learning — you can do it! 🌸"}</p><div class="stats"><div class="stat"><b>${S.ok}</b><small>Correct</small></div><div class="stat"><b>${S.no}</b><small>Mistakes</small></div><div class="stat"><b>${S.stars}</b><small>Stars</small></div></div><button class="big pink" id="again" style="width:100%;margin-top:15px">🔄 Play Again</button><button class="big purple" data-home style="width:100%;margin-top:10px">🏠 Home</button></div></section>`;again.onclick=quizStart;bindHome()}
-function memory(){let ids=[0,1,2,3,4,5,6,7].flatMap(x=>[x,x]).sort(()=>Math.random()-.5);S.mem=ids;S.flip=[];S.matches=0;app.innerHTML=`<section class="page"><button class="back" data-home>← Home</button><div class="card"><h2>🧠 Memory Game</h2><p class="tiny">Find matching letters.</p><div class="memory">${ids.map((x,i)=>`<button class="mem" data-i="${i}">?</button>`).join("")}</div><div id="mm" class="feedback"></div></div></section>`;document.querySelectorAll(".mem").forEach(b=>b.onclick=()=>flip(+b.dataset.i));bindHome()}
-function flip(i){if(S.flip.length===2||S.flip.includes(i))return;let bs=document.querySelectorAll(".mem"),x=S.mem[i];bs[i].textContent=DATA[x][0];bs[i].classList.add("open");S.flip.push(i);if(S.flip.length===2){let[a,b]=S.flip;if(S.mem[a]===S.mem[b]){bs[a].classList.add("matched");bs[b].classList.add("matched");S.matches++;S.stars++;save();S.flip=[];if(S.matches===8)mm.innerHTML="🏆 You found them all!";}else setTimeout(()=>{bs[a].textContent="?";bs[b].textContent="?";bs[a].classList.remove("open");bs[b].classList.remove("open");S.flip=[]},650)}}
-function tajweed(){app.innerHTML=`<section class="page"><button class="back" data-home>← Home</button><div class="hero"><h1>📖 Tajweed Corner</h1><p class="sub">Explore the Sifaat of all 28 letters.</p></div><div class="card"><b>Qalqalah letters</b><div class="tags">${["ق","ط","ب","ج","د"].map(x=>`<span class="tag arabic" style="font-size:28px">${x}</span>`).join("")}</div><p class="tiny">Qalqalah applies when these letters are Saakin.</p></div><div class="card">${DATA.map((d,i)=>`<button onclick="learnMode(${i})" style="display:flex;width:100%;align-items:center;gap:12px;background:none;padding:8px;border-bottom:1px solid #eee"><span class="arabic" style="font-size:38px">${d[0]}</span><b>${d[1]}</b><small style="margin-left:auto">${d[2].slice(0,2).join(" • ")}</small></button>`).join("")}</div></section>`;bindHome()}
-function bindHome(){document.querySelectorAll("[data-home]").forEach(x=>x.onclick=home)}
-soundBtn.onclick=()=>{S.sound=!S.sound;soundBtn.textContent=S.sound?"🔊":"🔇"};
-window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;if(S.mode==="home")home()});
-window.addEventListener("appinstalled",()=>{deferred=null});
-document.addEventListener("click",async e=>{if(e.target.id==="install"&&deferred){deferred.prompt();await deferred.userChoice;deferred=null}});
-if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
-home();
+
+const app = document.getElementById("app");
+const soundButton = document.getElementById("sound");
+
+let soundEnabled = true;
+let stars = Number(localStorage.getItem("arabicKidsStars") || 0);
+
+if (soundButton) {
+  soundButton.addEventListener("click", () => {
+    soundEnabled = !soundEnabled;
+    soundButton.textContent = soundEnabled ? "🔊" : "🔇";
+  });
+}
+
+function speak(text) {
+  if (!soundEnabled) return;
+
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+
+    const voice = new SpeechSynthesisUtterance(text);
+    voice.lang = "ar-SA";
+    voice.rate = 0.6;
+    voice.pitch = 1;
+
+    window.speechSynthesis.speak(voice);
+  }
+}
+
+function home() {
+  app.innerHTML = `
+    <section class="hero">
+      <h1>🌈 Arabic Kids</h1>
+      <p>Learn Arabic letters, play games and discover Tajweed.</p>
+    </section>
+
+    <div class="grid">
+
+      <button class="card c1" onclick="learnLetters()">
+        <span class="e">📚</span>
+        <h3>Learn Letters</h3>
+        <p>Learn all 28 Arabic letters.</p>
+      </button>
+
+      <button class="card c2" onclick="startQuiz()">
+        <span class="e">🎯</span>
+        <h3>Quiz Challenge</h3>
+        <p>Test your Arabic knowledge.</p>
+      </button>
+
+      <button class="card c3" onclick="memoryGame()">
+        <span class="e">🧠</span>
+        <h3>Memory Game</h3>
+        <p>Match the Arabic letters.</p>
+      </button>
+
+      <button class="card c4" onclick="tajweedCorner()">
+        <span class="e">✨</span>
+        <h3>Tajweed Corner</h3>
+        <p>Explore letter qualities.</p>
+      </button>
+
+      <button class="card c5" onclick="dailyArabic()">
+        <span class="e">☀️</span>
+        <h3>Daily Arabic</h3>
+        <p>Practice one letter every day.</p>
+      </button>
+
+      <button class="card c6" onclick="myProgress()">
+        <span class="e">🏆</span>
+        <h3>My Progress</h3>
+        <p>See your stars and level.</p>
+      </button>
+
+    </div>
+
+    <button class="install" onclick="installInfo()">
+      📲 Install Arabic Kids
+    </button>
+  `;
+}
+
+function learnLetters() {
+  let index = 0;
+
+  function render() {
+    const item = letters[index];
+
+    app.innerHTML = `
+      <section class="section">
+
+        <button class="back" onclick="home()">
+          ← Home
+        </button>
+
+        <div class="title">
+          <h2>📚 Learn Letters</h2>
+          <p>Letter ${index + 1} of 28</p>
+        </div>
+
+        <div class="progress">
+          <i style="width:${((index + 1) / 
