@@ -1,1 +1,7 @@
-Arabic Kids v2: Learn Mode, Quiz Mode, 40 questions, 4 choices, browser speech, sound toggle, Tajweed Sifah information. Arabic pronunciation uses the device/browser speech engine; an Arabic voice should be installed for best results.
+# Arabic Kids
+
+Mobile-first Arabic learning PWA: 28 letters, 40-question quiz, Tajweed Sifaat, pronunciation, memory game, daily letter, stars and offline caching.
+
+Upload all files to GitHub Pages or Netlify. Do not upload only the ZIP.
+
+The Listen feature uses the Arabic voice installed in the device/browser. For the most accurate Tajweed pronunciation, use properly licensed recordings from a qualified source.

@@ -1,15 +1,17 @@
 {
   "name": "Arabic Kids",
   "short_name": "Arabic Kids",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#17145f",
-  "theme_color": "#17145f",
+  "background_color": "#fffaf0",
+  "theme_color": "#24205f",
+  "description": "Learn Arabic letters, Tajweed and play games.",
   "icons": [
     {
       "src": "icon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }

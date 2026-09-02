@@ -1,14 +1,10 @@
-<!doctype html><html lang="en"><head><!-- Manifest faylini ulash -->
-<link rel="manifest" href="manifest.json">
-
-<!-- Mobil moslashuv va ranglar -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#4A90E2">
-<link rel="apple-touch-icon" href="icon.svg">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17145f"><link rel="icon" href="icon.svg"><link rel="manifest" href="manifest.json"><title>Arabic Kids 🌈</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><div class="decor">☁️ ⭐ 🌸 ☁️ 🌼 ✨</div><main class="app"><section id="home" class="screen active"><div class="brand">📖 ARABIC KIDS</div><h1>Find the Arabic Letter! 🌈</h1><p class="lead">Learn Arabic letters and Tajweed in a fun way!</p><div class="hero"><div class="big-letter">ب</div><button id="heroSpeak">🔊</button><b>Listen • Learn • Play</b></div><button id="learnBtn" class="menu learn">📚 Learn Mode</button><button id="quizBtn" class="menu quiz">🎯 Quiz Mode</button><button id="soundBtn" class="sound">🔊 Sound: ON</button><p class="small">28 letters • 40 questions</p></section><section id="learn" class="screen"><div class="top"><button class="back" data-home>←</button><b>📚 Learn Mode</b><button id="learnSound">🔊</button></div><div class="card"><div id="learnLetter" class="learn-letter">ا</div><div id="learnName" class="name">Alif</div><button id="speakLetter" class="listen">🔊 Listen</button><div class="quality"><b>📚 Tajweed quality</b><span id="learnQuality">—</span></div></div><div class="nav"><button id="prevLetter">⬅️</button><span id="learnCounter">1 / 28</span><button id="nextLetter">➡️</button></div><button id="learnQuiz" class="primary">🎯 Try the Quiz</button></section><section id="quiz" class="screen"><div class="top"><button class="back" data-home>←</button><div class="prog"><b id="counter">Question 1 of 40</b><span id="score">⭐ 0</span><div class="track"><i id="bar"></i></div></div><button id="quizSpeak">🔊</button></div><div class="question"><h2 id="question">Which one is <span>ب</span>?</h2><button id="speakQuestion" class="hear">🔊 Hear the question</button></div><div id="options" class="options"></div><div id="feedback" class="feedback"></div><div class="quality"><b>📚 Tajweed quality</b><span id="quizQuality">Choose an answer to learn more.</span></div></section><section id="result" class="screen"><div class="trophy">🏆</div><h2 class="result-title">Your Result!</h2><div class="result-card"><p>⭐ Correct answers <strong id="correct">0</strong></p><p>❌ Mistakes <strong id="wrong">0</strong></p><p>🎯 Score <strong id="percent">0%</strong></p></div><p id="message" class="message"></p><button id="again" class="primary">🔄 Play Again</button><button class="home" data-home>🏠 Home</button></section></main><footer>🌙 Learn • Practice • Grow 🌙</footer><script src="script.js"></script></body></html>if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('Service Worker ro\'yxatdan o\'tdi:', reg))
-      .catch(err => console.log('Service Worker xatosi:', err));
-  });
-}
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#24205f"><meta name="description" content="Arabic Kids learning app">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<title>Arabic Kids</title><link rel="stylesheet" href="style.css">
+</head><body><div class="app">
+<header><button class="brand" data-home><b>ا</b> Arabic Kids</button><button id="soundBtn">🔊</button></header>
+<main id="app"></main><footer>Learn Arabic with joy 🌈</footer></div>
+<script src="script.js"></script></body></html>
