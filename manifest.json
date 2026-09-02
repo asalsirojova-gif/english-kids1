@@ -1,0 +1,16 @@
+{
+  "name": "Find the Arabic Letter!",
+  "short_name": "Arabic Kids",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#17145f",
+  "theme_color": "#17145f",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
