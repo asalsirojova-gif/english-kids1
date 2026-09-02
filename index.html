@@ -1,10 +1,89 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#24205f"><meta name="description" content="Arabic Kids learning app">
-<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
-<title>Arabic Kids</title><link rel="stylesheet" href="style.css">
-</head><body><div class="app">
-<header><button class="brand" data-home><b>ا</b> Arabic Kids</button><button id="soundBtn">🔊</button></header>
-<main id="app"></main><footer>Learn Arabic with joy 🌈</footer></div>
-<script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#6C63FF"
+  >
+
+  <meta
+    name="description"
+    content="Arabic Kids - Learn Arabic letters and Tajweed through fun games."
+  >
+
+  <title>Arabic Kids</title>
+
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div
+      class="brand"
+      onclick="home()"
+    >
+
+      <div class="logo">
+        ا
+      </div>
+
+      <div class="brand-text">
+        <strong>Arabic Kids</strong>
+        <span>Learn • Play • Tajweed</span>
+      </div>
+
+    </div>
+
+    <button
+      id="sound"
+      class="sound-button"
+      type="button"
+      aria-label="Sound"
+    >
+      🔊
+    </button>
+
+  </header>
+
+
+  <main id="app">
+
+    <div class="loading">
+      <div class="loading-icon">ا</div>
+      <h2>Arabic Kids</h2>
+      <p>Loading...</p>
+    </div>
+
+  </main>
+
+
+  <footer>
+    <span>Arabic Kids</span>
+    <span>•</span>
+    <span>Learn Arabic with joy</span>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
