@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17145f">
+  <meta name="description" content="A colorful, mobile-friendly Arabic alphabet and Tajweed practice game for children.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <title>Find the Arabic Letter! 🌈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky-decor" aria-hidden="true">
+    <span>☁️</span><span>🌸</span><span>⭐</span><span>☁️</span><span>🌼</span>
+  </div>
+
+  <main class="app">
+    <section id="startScreen" class="screen active">
+      <div class="brand-badge">📖 Arabic • Tajweed • Fun</div>
+      <h1>Find the Arabic Letter! 🌈</h1>
+      <p class="lead">Look carefully, find the letter, and learn a Tajweed quality along the way.</p>
+      <div class="hero-card">
+        <div class="hero-letter" aria-hidden="true">ب</div>
+        <div class="hero-stars">⭐ 🌸 ⭐</div>
+        <p>Ready for a fun challenge?</p>
+      </div>
+      <button id="startBtn" class="primary-btn">Let’s Start! 🚀</button>
+      <p class="tiny-note">40 questions • 4 choices each</p>
+    </section>
+
+    <section id="quizScreen" class="screen" aria-live="polite">
+      <header class="quiz-header">
+        <div class="progress-wrap">
+          <div class="progress-label"><span id="questionCounter">Question 1 of 40</span><span id="scoreBadge">⭐ 0</span></div>
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        </div>
+      </header>
+
+      <div class="question-card">
+        <div class="sparkle">✨</div>
+        <h2 id="questionText">Which one is <span>ب</span>?</h2>
+        <p class="hint">Tap the correct letter 👆</p>
+      </div>
+
+      <div id="options" class="options" role="group" aria-label="Answer choices"></div>
+      <div id="feedback" class="feedback" role="status" aria-live="assertive"></div>
+
+      <div class="learning-card">
+        <div class="learning-title">📚 Tajweed quality</div>
+        <div id="qualityText" class="quality-text">—</div>
+        <div id="qualityEnglish" class="quality-english">Choose an answer to learn more.</div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="result-emoji">🏆</div>
+      <h2>Your Result!</h2>
+      <div class="result-card">
+        <div><span>⭐ Correct answers</span><strong id="correctResult">0</strong></div>
+        <div><span>❌ Mistakes</span><strong id="wrongResult">0</strong></div>
+        <div class="result-percent"><span>🎯 Score</span><strong id="percentResult">0%</strong></div>
+      </div>
+      <p id="resultMessage" class="result-message">🌸 Well done! May your knowledge grow! 🌸</p>
+      <button id="restartBtn" class="primary-btn">Play Again 🔄</button>
+    </section>
+  </main>
+
+  <footer>🌙 Learn • Practice • Grow 🌙</footer>
+  <script src="script.js"></script>
+</body>
+</html>
